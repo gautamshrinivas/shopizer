@@ -1,0 +1,16 @@
+pipeline {
+    agent { label 'GRADLE && JDK11 && NVM && PY3' } 
+    stages {
+        stage('clone') {
+            steps {
+                git url: 'https://github.com/gautamshrinivas/openmrs-core.git',
+                branch: 'SPRINT_1_REL'
+            }
+        }
+        stage ('build') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+}
