@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                git url: 'https://github.com/gautamshrinivas/openmrs-core.git',
+                git url: 'https://github.com/gautamshrinivas/shopizer.git',
                 branch: 'SPRINT_1_REL'
             }
         }
