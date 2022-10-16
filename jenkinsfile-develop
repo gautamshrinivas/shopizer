@@ -1,0 +1,19 @@
+pipeline {
+    agent { label 'shop'}
+    triggers {
+        pollSCM ('* * * * *')
+    }
+    stages {
+        stage('vcs') {
+            steps {
+            git url : '',
+            branch: ''                
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
