@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-            git url : '',
-            branch: ''                
+            git url : 'https://github.com/gautamshrinivas/shopizer.git',
+            branch: 'develop'                
             }
         }
         stage('build') {
