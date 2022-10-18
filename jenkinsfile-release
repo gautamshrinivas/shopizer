@@ -1,9 +1,9 @@
 pipeline {
     agent { label 'shop'}
-     triggers {
+/*      triggers {
         cron('30 10 17 10 4')
     }    
-    stages {
+ */    stages {
         stage('vcs') {
             steps {
             git url : 'https://github.com/gautamshrinivas/shopizer.git',
@@ -12,7 +12,8 @@ pipeline {
         }
         stage ('merge') {
             steps {
-                sh 'git merge --no-ff develop'
+                sh 'git checkout release'
+                sh 'git merge develop --no-ff'
             }
         }
         stage('build') {
