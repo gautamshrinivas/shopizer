@@ -3,7 +3,8 @@ pipeline {
 /*     triggers {
         pollSCM ('* * * * *')
     }
- */    stages {
+ */    
+    stages {
         stage('vcs') {
             steps {
             git url : 'https://github.com/gautamshrinivas/shopizer.git',
